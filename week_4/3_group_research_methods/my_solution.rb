@@ -6,46 +6,71 @@ my_family_pets_ages = {"Evi" => 6, "Hoobie" => 3, "George" => 12, "Bogart" => 4,
 
 # Person 1's solution
 def my_array_finding_method(source, thing_to_find)
-  # Your code here!
+    return source.select {|v| v =~ /#{thing_to_find}/}
 end
 
 def my_hash_finding_method(source, thing_to_find)
-  # Your code here!
+    new_hash = source.select {|k,v| v == thing_to_find}  
+    new_array = new_hash.to_a.flatten
+    new_array.delete(thing_to_find)
+    return new_array
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
+# I used select for these methods. Select returns a new object (of the same data type you started with)
+# with the values that pass the test block. The real trick for these problems was converting the selected
+# hash into an array with the correct elements. To do that I used to_a, flatten, and delete.
 
 # Person 2
+
+# Takes an array and modifies the numbers inside it 
 def my_array_modification_method(source, thing_to_modify)
-  # Your code here!
+  source.map {|element| element.is_a?(Integer)? element + thing_to_modify : element}
 end
 
+
+# Takes a hash and modifies the numbers inside it
 def my_hash_modification_method(source, thing_to_modify)
-  # Your code here!
+  newsource=Hash[source.map{|key, value| [key, value.is_a?(Integer)? value + thing_to_modify : value]}]
 end
+
+
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
+# .map is the Ruby method I implemented. It returns a new array with the results of running the block once for every element in enumerator.
+# This is different from array.each, which returns the original array. 
+# I also used .is_a?(Integer) to specify whether an element or value is an integer.
 
 
 # Person 3
 def my_array_sorting_method(source)
-  # Your code here!
+  # Convert each element in the array to a string, for comparison/sorting purposes
+  for index in 0...source.length
+        source[index] = source[index].to_s
+    end
+
+    sorted_array = source.sort_by do |element|
+        element
+    end
+
+    return sorted_array
 end
 
 def my_hash_sorting_method(source)
   # Your code here!
+    sorted_hash = source.sort_by do |key, value|
+        value
+    end
+
+    return sorted_hash
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
+# The Ruby sort_by method lets you sort within your object, whether it is an array or a hash.  
+# For an array, the syntax is quite basic:  
+#     sorted_array = array_to_sort.sort_by { |element| element }
+# And for the hash, just a tad more involved:
+#     sorted_hash = source.sort_by { |key, value| value }
 
 
 # Person 4
@@ -78,7 +103,7 @@ p my_array_deletion_method(i_want_pets, "a") == ["I", 4, "pets", "but", "I", "on
 p my_hash_deletion_method(my_family_pets_ages, "George") == {"Evi" => 8, "Hoobie" => 5, "Bogart" => 6, "Poly" => 6, "Annabelle" => 2, "Ditto" => 5}
 
 # Reflect!
-# 
+# Can't get person 3 driver tests to pass!
 # 
 # 
 # 
