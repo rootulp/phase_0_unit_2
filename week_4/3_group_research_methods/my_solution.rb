@@ -74,18 +74,20 @@ end
 
 
 # Person 4
+
 def my_array_deletion_method(source, thing_to_delete)
-  #Your code here!
+
+  source.delete_if {|i| i.to_s.include?(thing_to_delete)}
+  return source
+
 end
 
 def my_hash_deletion_method(source, thing_to_delete)
-  #Your code here!
-end
+  
+  source.delete_if {|k, v| v.to_s.include?(thing_to_delete)}
+  return source
 
-# Identify and describe the ruby method you implemented. 
-# 
-#
-#
+end
 
 
 ################## DRIVER CODE ###################################
