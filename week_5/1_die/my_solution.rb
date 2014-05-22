@@ -1,14 +1,14 @@
 # U2.W5: Die Class 1: Numeric
 
-
 # I worked on this challenge by myself.
 
 # 2. Pseudocode
 
 # Input:
+# sides is an integer
 # Output:
+# sides returns ineger num of sides and roll returns random int from 1 to sides
 # Steps:
-
 
 # 3. Initial Solution
 
