@@ -52,6 +52,7 @@ p create_word_row(boggle_board, 2) == "eclr"
 # Would've been tough to implement without create_word
 
 
+<<<<<<< HEAD
 #-------------------------------------------------------------------------------
 
 # Part 3: Now write a method that takes a column number and returns all the elements in the column.
@@ -75,3 +76,5 @@ p create_word_col(boggle_board, 2) == "adlk"
 
 # Reflection 
 # This was just a copy of create_word_row
+=======
+>>>>>>> FETCH_HEAD
