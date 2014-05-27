@@ -12,6 +12,11 @@ attr_reader :contents
 
 # Are there any more methods needed in this class?
 
+def eat
+puts "eating with the #{type}"
+@clean = false
+end
+
 def initialize
 @contents = []
 @open = true
@@ -25,12 +30,16 @@ def close
 @open = false
 end 
 
-def add_item
+def add_item(item)
 @contents << item
 end
 
 def remove_item(item = @contents.pop) #what is `#pop` doing?
-@contents.delete(item)
+    if item != nil
+    puts "This is what item is"
+    puts item
+    @contents.delete(item)
+end
 end
 
 def dump  # what should this method return?
@@ -41,7 +50,6 @@ def view_contents
 puts "The drawer contains:"
 @contents.each {|silverware| puts "- " + silverware.type }
 end
-
 
 class Silverware
 attr_reader :type
@@ -56,6 +64,11 @@ end
 def eat
 puts "eating with the #{type}"
 @clean = false
+end
+
+def clean_silverware
+puts "Cleaned your silverware"
+@clean = true
 end
 
 end
@@ -88,6 +101,8 @@ silverware_drawer.view_contents #What should this return?
 
 fork = silverware_drawer.remove_item(fork) #add some puts statements to help you trace through the code...
 fork.eat
+
+end
 
 #BONUS SECTION
 # puts fork.clean
