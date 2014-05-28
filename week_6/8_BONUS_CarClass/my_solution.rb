@@ -94,13 +94,8 @@ class Pizza
     end
 end
 
-
 # 4. Refactored Solution
 # Refactored above.
-
-
-
-
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
 car1 = Vehicle.new("Ferrari", "Red")
@@ -115,3 +110,7 @@ car1.stop()
 car1.get_total_distance()
 
 # 5. Reflection 
+# I decided against doing the pizza part of this bonus. It didn't seem like I was going to learn a lot from it. If I have
+# time after finishing the blogs though, I'd like to come back and maybe draw out where the car is. Possibly 
+# animate a tiny car moving in accordance with where the driver tests told it to go. <- Seems like an interesting
+# way to learn about drawing / animation with ruby.
